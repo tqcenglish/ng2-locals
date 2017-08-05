@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  locales= [{
+    ident: 'zh',
+    language: 'Chinese',
+    country: 'China'
+  }, {
+    ident: 'es',
+    language: 'English',
+    country: 'English'
+  }];
+  loading= false;
 }

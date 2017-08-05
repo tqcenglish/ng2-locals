@@ -1,0 +1,23 @@
+<p class="control is-expanded">
+    <input class="input" type="text" placeholder="placeholder_tip" name="search" [(ngModel)]="searchString" autocomplete="off">
+</p>
+<!--[routerLink]="['locales', locale.ident]"  -->
+ <article class="media locale center-align"  *ngFor="let locale of _filteredLocales">
+    <figure class="media-left">
+        <span class="icon is-medium">
+                <i class="flag-icon flag-icon-{{locale.ident}}"></i>
+            </span>
+    </figure>
+    <div class="media-content">
+        <div class="content">
+            <p class="title is-5">{{locale.language}} ({{locale.country}})</p>
+            <p>Ident: {{locale.ident}}</p>
+        </div>
+    </div>
+</article>
+
+<div *ngIf="locales && locales.length <= 0">
+    <div class="notification is-warning">
+        {{warning_tip}}
+    </div>
+</div>
